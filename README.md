@@ -61,6 +61,34 @@
 - Тёмный интерфейс, акцентный цвет подбирается по обложке.
 - Размер APK ~45 МБ: картинки кассет упакованы в WebP без заметной потери качества.
 
+## Редактор кассет
+
+В корне репозитория лежит **`cassette_editor.7z`** — отдельный инструмент, которым собираются и
+правятся наборы кассет (в плеер он не входит и ставится отдельно).
+
+**Что внутри архива**
+- сам редактор (`cassette_editor/`), запускалки `run_editor.py` / `run_editor.bat`,
+  `requirements.txt` и `README.md` с описанием горячих клавиш;
+- папка `cassettes/` — все 155 наборов плеера как примеры: JSON-описание и картинки WebP.
+  Можно открыть любой, посмотреть, как он устроен, и сделать свой по образцу.
+
+**Как запустить (Windows)**
+1. Распаковать архив в любую папку.
+2. Поставить Python 3.11+ и зависимости: `pip install -r requirements.txt`
+   (нужны PySide6 и Pillow).
+3. Запустить `run_editor.bat` — или `python run_editor.py`.
+
+**Что умеет**
+- открывать и сохранять набор: `Save`, `Save Set and Next`, `Save As`; листать наборы по порядку
+  кнопкой `>` рядом с `Load Set` (или `Ctrl+→`) — папка с наборами определяется автоматически;
+- править слои: положение, масштаб, поворот, прозрачность, режим смешивания, порядок по z;
+- заводскую наклейку: текст, шрифт (включая свой TTF), размер, рамку, выравнивание, бегущую
+  строку и **вертикальные наклейки** для корпусов с полосой вдоль корпуса;
+- выравнивать два выделенных слоя одной кнопкой — по размеру (ширина и высота) и по левому краю;
+- заполнять музейную справку набора: год, заметка, страна и флаг (их показывает пикер кассет
+  в плеере);
+- экспортировать набор для Android: раскладка и картинки складываются в папку `assets`.
+
 ---
 
 # dESquared (English)
@@ -83,6 +111,19 @@ An audio player for portable players with its own **cassette-style interface**. 
   animated cassette widgets, lock-screen content, built-in QWERTY on square screens.
 - **Also**: six languages (ru/en/es/zh/ko/ja), settings backup to a zip, dark UI with an accent
   colour taken from the cover art, APK ~45 MB.
+
+## Cassette editor
+
+**`cassette_editor.7z`** in the repository root is a separate tool (not part of the player) used to
+build and edit cassette sets. It contains the editor itself (`cassette_editor/`, `run_editor.py`,
+`run_editor.bat`, `requirements.txt`), a README with shortcuts, and the whole `cassettes/` folder —
+all 155 sets as examples (JSON + WebP art) to copy as a starting point.
+
+Run it with Python 3.11+: `pip install -r requirements.txt` (PySide6, Pillow), then
+`run_editor.bat` (or `python run_editor.py`). It can open/save sets and step through them with the
+`>` button (or `Ctrl+→`), edit layers and the factory label (font, size, marquee, **vertical
+labels**), align two selected layers by size and left edge, fill in the museum info (year, note,
+country, flag) and export a set for Android.
 
 ## Install
 
