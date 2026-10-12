@@ -33,6 +33,9 @@
   акцентный цвет.
 - **Обложка**: размытая на фоне (с ползунком прозрачности) или **сквозь ленты** —
   в режиме SOFT мягко подсвечивает волну, в режиме SHARP ленты становятся окном в арт.
+- **Частота кадров 30/60 fps**: 30 — по умолчанию (замеры: 60 fps почти вдвое ускоряют
+  разряд со включённым экраном), 60 — для максимальной плавности; при выключенном экране
+  рендер останавливается.
 - **Пресеты вида**: сохраняются под своим именем, применяются из выпадающего списка,
   удаляются с подтверждением; один пресет (**dEFLASH**) уже вшит в сборку.
 - Акцент обложки может красить ленты, градиент фона и блёстки.
@@ -148,6 +151,8 @@ country, flag) and export a set for Android.
   size, rise speed, how many ribbons they follow and accent tint are configurable.
 - **Cover art**: blurred behind the wave (with an opacity slider) or **through the
   ribbons** — SOFT glow, or SHARP where the ribbons become a window into the artwork.
+- **30/60 fps switch**: 30 is the default (measured: 60 fps nearly doubles battery drain
+  with the screen on), 60 for maximum smoothness; rendering stops when the screen is off.
 - **Looks can be saved as presets** (dropdown, delete with confirmation); one preset
   (**dEFLASH**) already ships inside the APK.
 - The cover accent can tint the ribbons, the background gradient and the sparkles.
