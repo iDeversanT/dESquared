@@ -1,5 +1,5 @@
 # dESquared
-![](image.jpg)
+
 Аудиоплеер для портативных плееров с собственным «кассетным» интерфейсом. Писался под
 **Anbernic RG Rotate (720×720)** и **HiBy R6III**, но работает на любом Android 12+.
 
@@ -22,6 +22,20 @@
 - Подпись на наклейке берётся из тегов (`{title}`, `{artist}`, свои шаблоны), шрифт и размер
   настраиваются; для корпусов с полосой вдоль корпуса — **вертикальные наклейки**.
 - Пикер кассет с музейной справкой (год, заметка, страна).
+
+### Волна (третий вид плеера)
+- **Живой GLSL-фон в духе PS3/PSP**: семь лент, двухцветный градиент, скорость, свечение,
+  толщина лент, положение по Y; шесть палитр + свой градиент RGB.
+- **Реакция на музыку**: бас и верх из аудиопотока (без разрешений) — волна дышит, ленты
+  расширяются на низах; опционально **изломы/спайки** с регулируемой степенью.
+- **Блёстки как на PS3**: точки всплывают вверх сквозь волну, вспыхивают и гаснут по
+  отдельности; настраиваются размер, скорость всплытия, к каким волнам привязаны и
+  акцентный цвет.
+- **Обложка**: размытая на фоне (с ползунком прозрачности) или **сквозь ленты** —
+  в режиме SOFT мягко подсвечивает волну, в режиме SHARP ленты становятся окном в арт.
+- **Пресеты вида**: сохраняются под своим именем, применяются из выпадающего списка,
+  удаляются с подтверждением; один пресет (**dEFLASH**) уже вшит в сборку.
+- Акцент обложки может красить ленты, градиент фона и блёстки.
 
 ### Файловый менеджер
 - Внутренняя память, SD-карта и **сетевые хранилища (SMB2/3)**: вход по IP, логину и паролю,
@@ -62,7 +76,7 @@
 - Размер APK ~45 МБ: картинки кассет упакованы в WebP без заметной потери качества.
 
 ## Редактор кассет
-![](cassette_editor.jpg)
+
 В корне репозитория лежит **`cassette_editor.7z`** — отдельный инструмент, которым собираются и
 правятся наборы кассет (в плеер он не входит и ставится отдельно).
 
@@ -124,6 +138,19 @@ Run it with Python 3.11+: `pip install -r requirements.txt` (PySide6, Pillow), t
 `>` button (or `Ctrl+→`), edit layers and the factory label (font, size, marquee, **vertical
 labels**), align two selected layers by size and left edge, fill in the museum info (year, note,
 country, flag) and export a set for Android.
+
+### Wave (third player view)
+- **Live GLSL background in PS3/PSP spirit**: seven ribbons, two‑colour gradient, speed,
+  glow, ribbon thickness, Y position; six palettes plus a custom RGB gradient.
+- **Reacts to music**: bass and treble come from the audio stream (no permissions) — the
+  wave breathes and the ribbons widen on low end; optional **kinks/spikes** with a slider.
+- **PS3‑style sparkles**: dots drift upwards through the wave and flash individually;
+  size, rise speed, how many ribbons they follow and accent tint are configurable.
+- **Cover art**: blurred behind the wave (with an opacity slider) or **through the
+  ribbons** — SOFT glow, or SHARP where the ribbons become a window into the artwork.
+- **Looks can be saved as presets** (dropdown, delete with confirmation); one preset
+  (**dEFLASH**) already ships inside the APK.
+- The cover accent can tint the ribbons, the background gradient and the sparkles.
 
 ## Install
 
